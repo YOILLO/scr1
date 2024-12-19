@@ -85,6 +85,7 @@ build_verilator: $(sv_list)
 	+1800-2017ext+sv \
 	-Wno-fatal \
 	--top-module $(top_module) \
+	--timing \
 	-DSCR1_TRGT_SIMULATION \
 	-D$(SIM_TRACE_DEF) \
 	-D$(SIM_CFG_DEF) \
@@ -103,6 +104,7 @@ build_verilator_wf: $(sv_list)
 	verilator \
 	-cc \
 	-sv \
+	--timing \
 	+1800-2017ext+sv \
 	-Wno-fatal \
 	--top-module $(top_module) \
