@@ -102,12 +102,12 @@
 #define INTERRUPT_HANDLER j other_exception /* No interrupts should occur */
 
 #define RVTEST_CODE_BEGIN                                               \
-        .section .text.init;                                            \
         MSG_TRAP:                                                       \
         .string "«misalign»\0";                                         \
         .balign  64;                                                    \
         .weak stvec_handler;                                            \
         .weak mtvec_handler;                                            \
+        .section .text.init;                                            \
 trap_vector:                                                            \
         /* test whether the test came from pass/fail */                 \
         csrr a4, mcause;                                                \
